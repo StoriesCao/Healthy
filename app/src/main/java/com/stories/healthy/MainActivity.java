@@ -59,8 +59,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+                if (mSelectedBottomMenu != null) {
+                    mSelectedBottomMenu.setChecked(false);
+                } else {
+                    mSelectedBottomMenu = mBottomNavigationView.getMenu().getItem(0).setChecked(false);
+                }
                 mBottomNavigationView.getMenu().getItem(position).setChecked(true);
-               // prevMenuItem =mBottomNavigationView.getMenu().getItem(position);
+                mSelectedBottomMenu = mBottomNavigationView.getMenu().getItem(position);
             }
 
             @Override
