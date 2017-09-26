@@ -13,11 +13,11 @@ import com.stories.healthy.R;
  * Created by Charlottecao on 9/26/17.
  */
 
-public class MomentGreat extends Fragment {
+public class MomentItem extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_moment_great, container, false);
+        View view = inflater.inflate(R.layout.fragment_moment_item, container, false);
 
         return view;
     }
