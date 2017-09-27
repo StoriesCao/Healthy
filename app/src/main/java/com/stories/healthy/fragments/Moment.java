@@ -41,8 +41,8 @@ public class Moment extends Fragment {
         mTabNameList.add("最新");
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         MomentViewPaperAdapter momentViewPaperAdapter = new MomentViewPaperAdapter(fragmentManager, mTabNameList);
-        momentViewPaperAdapter.addFragment(new MomentGreat());
-        momentViewPaperAdapter.addFragment(new MomentNow());
+        momentViewPaperAdapter.addFragment(new MomentItem());
+        momentViewPaperAdapter.addFragment(new MomentItem());
         mViewPager.setAdapter(momentViewPaperAdapter);
 
 
