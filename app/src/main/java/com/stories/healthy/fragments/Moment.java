@@ -1,7 +1,9 @@
 package com.stories.healthy.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.stories.healthy.AddMomentActivity;
 import com.stories.healthy.R;
 import com.stories.healthy.adapter.MomentViewPaperAdapter;
 
@@ -26,6 +29,8 @@ public class Moment extends Fragment {
 
     private TabLayout mTabLayout;
 
+    private FloatingActionButton mAddMomentButton;
+
     private List<String> mTabNameList = new ArrayList<>();
 
     @Nullable
@@ -33,6 +38,7 @@ public class Moment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_moment, container, false);
 
+        /* ****** */
         mViewPager = (ViewPager) view.findViewById(R.id.moment_view_paper);
         mTabLayout = (TabLayout) view.findViewById(R.id.moment_tab_layout);
 
@@ -51,6 +57,21 @@ public class Moment extends Fragment {
         mTabLayout.addTab(mTabLayout.newTab().setText(mTabNameList.get(1)));
         mTabLayout.setupWithViewPager(mViewPager);
 
+         /* ****** */
+        mAddMomentButton = (FloatingActionButton) view.findViewById(R.id.add_moment);
+
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mAddMomentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getContext().startActivity(new Intent(getActivity(), AddMomentActivity.class));
+            }
+        });
+
     }
 }
