@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tab_title">
+        <item>老年人</item>
+        <item>儿童</item>
+        <item>学生</item>
+        <item>孕妇</item>
+        <item>婴幼儿</item>
+    </string-array>
+</resources>
