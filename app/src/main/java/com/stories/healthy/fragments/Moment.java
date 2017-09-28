@@ -77,7 +77,9 @@ public class Moment extends Fragment {
         mAddMomentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getContext().startActivity(new Intent(getActivity(), AddMomentActivity.class));
+                Intent intent = new Intent(getActivity(), AddMomentActivity.class);
+                getContext().startActivity(intent);
+                ((AppCompatActivity) getActivity()).overridePendingTransition(R.anim.add_moment_activity_open, R.anim.add_moment_activity_close);
             }
         });
 

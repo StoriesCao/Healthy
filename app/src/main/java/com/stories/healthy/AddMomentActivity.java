@@ -15,4 +15,10 @@ public class AddMomentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_moment);
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.add_moment_activity_open, R.anim.add_moment_activity_close);
+    }
 }
