@@ -17,9 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".AddMomentActivity"
-            android:theme="@style/NoActionBar"/>
+        <activity android:name=".AddMomentActivity"/>
 
     </application>
 

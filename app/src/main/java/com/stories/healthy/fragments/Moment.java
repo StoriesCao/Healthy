@@ -8,6 +8,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,8 @@ import java.util.List;
  */
 
 public class Moment extends Fragment {
+
+    private Toolbar mToolbar;
 
     private ViewPager mViewPager;
 
@@ -60,6 +64,10 @@ public class Moment extends Fragment {
          /* ****** */
         mAddMomentButton = (FloatingActionButton) view.findViewById(R.id.add_moment);
 
+        /* ****** */
+        mToolbar = (Toolbar) view.findViewById(R.id.moment_toolbar);
+        setHasOptionsMenu(true);  //调用Fragment的onCreateMenu（）方法
+        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
         return view;
     }
 
